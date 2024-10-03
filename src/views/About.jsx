@@ -27,7 +27,7 @@ const About = () => {
 
                 {/* Container for the cards */}
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center items-center px-16 mt-4">
-                    <div className="flex-col items-center justify-center h-44 rounded-lg bg-gray-50 dark:bg-gray-800 shadow-lg">
+                    <div className="flex flex-col items-center justify-center h-44 rounded-lg bg-gray-50 dark:bg-gray-800 shadow-lg">
                         <div className="flex items-center justify-center mt-12">
                             <svg className="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                                 <path fill="#E34F26" d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z" />
