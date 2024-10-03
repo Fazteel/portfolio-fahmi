@@ -5,6 +5,7 @@ import Footer from './layout/Footer';
 import Hero from './views/Hero';
 import About from './views/About';
 import Portfolio from './views/Portfolio';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Portfolio />
           </div>
         </main>
+        <ScrollToTopButton />
         <Footer />
       </div>
     </>
