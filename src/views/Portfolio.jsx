@@ -3,31 +3,31 @@ const projects = [
     {
         title: "BagiBagi Cora - Task Management",
         role: "Front-End Developer",
-        description: "Platform web manajemen tugas untuk meningkatkan kolaborasi dan produktivitas organisasi. Mengintegrasikan REST API untuk pembaruan tugas secara real-time. [cite: 29, 30, 32]",
+        description: "Platform web manajemen tugas untuk meningkatkan kolaborasi dan produktivitas organisasi. Mengintegrasikan REST API untuk pembaruan tugas secara real-time.",
         tech: ["JSP", "JSTL", "Bootstrap", "REST API"]
     },
     {
         title: "Pagii HR - Management System",
         role: "Full-Stack Contributor",
-        description: "Sistem HR terintegrasi untuk absensi, perjalanan dinas, cuti, dan reimbursement. Dioptimalkan pada sisi query database dan logika API untuk performa yang lebih cepat. [cite: 35, 36, 38]",
+        description: "Sistem HR terintegrasi untuk absensi, perjalanan dinas, cuti, dan reimbursement. Dioptimalkan pada sisi query database dan logika API untuk performa yang lebih cepat.",
         tech: ["React", "Next.js", "Spring Boot"]
     },
     {
         title: "Pagii Chatshop - AI Chatbot",
         role: "Full-Stack Contributor",
-        description: "Platform commerce berbasis WhatsApp dengan asisten AI, terintegrasi dengan REST API untuk alur pemesanan, invoice, dan pembayaran. [cite: 41, 43, 44]",
+        description: "Platform commerce berbasis WhatsApp dengan asisten AI, terintegrasi dengan REST API untuk alur pemesanan, invoice, dan pembayaran.",
         tech: ["WhatsApp API", "REST API", "AI"]
     },
     {
         title: "Sandbox Ordering - POS System",
         role: "Full-Stack Contributor",
-        description: "Sistem kasir dan toko online (Web & WebView) dengan manajemen pesanan dan keranjang belanja yang dibangun menggunakan arsitektur komponen yang reusable. [cite: 48, 49]",
+        description: "Sistem kasir dan toko online (Web & WebView) dengan manajemen pesanan dan keranjang belanja yang dibangun menggunakan arsitektur komponen yang reusable.",
         tech: ["Vue.js", "Spring Boot", "REST API"]
     },
     {
         title: "WasteGo - Waste Bank App",
         role: "Backend Developer",
-        description: "Aplikasi bank sampah akademik untuk manajemen penjemputan dan reward poin dengan pemisahan routing, controller, dan service yang bersih. [cite: 53, 54, 57]",
+        description: "Aplikasi bank sampah akademik untuk manajemen penjemputan dan reward poin dengan pemisahan routing, controller, dan service yang bersih.",
         tech: ["Express.js", "PostgreSQL", "Node.js"]
     }
 ];
