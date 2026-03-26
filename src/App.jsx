@@ -1,10 +1,11 @@
-// src/App.jsx
 import Navbar from './layout/Navbar';
 import Footer from './layout/Footer';
 import Hero from './views/Hero';
 import About from './views/About';
 import Portfolio from './views/Portfolio';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import Contact from './views/Contact';
+import Experience from './views/Experiences';
 
 const App = () => {
   return (
@@ -15,7 +16,9 @@ const App = () => {
           <Hero />
           <div className="mt-28">
             <About />
+            <Experience />
             <Portfolio />
+            <Contact />
           </div>
         </main>
         <ScrollToTopButton />

@@ -1,26 +1,39 @@
-// src/components/Footer.jsx
-import React from 'react';
+import { Link } from 'react-scroll';
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
     return (
-        <footer class="bg-gray-50 dark:bg-gray-800">
-            <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">Fahmi</a>. All Rights Reserved.
+        <footer className="bg-white border-t border-gray-100 dark:bg-gray-900 dark:border-gray-800 py-8 mt-auto">
+            <div className="w-full mx-auto max-w-screen-xl px-6 lg:px-12 md:flex md:items-center md:justify-between">
+                
+                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                    © {currentYear} <Link to="home" smooth={true} duration={500} className="hover:underline hover:text-blue-600 dark:hover:text-blue-400 font-medium cursor-pointer transition-colors">Fahmi Andika Setiono</Link>. All Rights Reserved.
                 </span>
-                <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                
+                <ul className="flex flex-wrap items-center mt-4 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 gap-4 md:gap-6">
                     <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                        <Link to="about" smooth={true} duration={500} className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition-colors">
+                            About
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                        <Link to="experience" smooth={true} duration={500} className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition-colors">
+                            Experience
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                        <Link to="portfolio" smooth={true} duration={500} className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition-colors">
+                            Portfolio
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" class="hover:underline">Contact</a>
+                        <Link to="contact" smooth={true} duration={500} className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition-colors">
+                            Contact
+                        </Link>
                     </li>
                 </ul>
+                
             </div>
         </footer>
     );
