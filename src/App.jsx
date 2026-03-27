@@ -11,7 +11,7 @@ const App = () => {
   return (
     <>
       <div className="flex flex-col">
-        <main className="flex-grow text-center bg-gray-100 dark:bg-gray-800">
+        <main className="flex-grow text-center bg-slate-100 dark:bg-gray-800">
         <Navbar />
           <Hero />
           <div className="mt-28">

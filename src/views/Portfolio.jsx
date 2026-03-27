@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 
 const projects = [
     {
@@ -33,42 +34,78 @@ const projects = [
 ];
 
 const Portfolio = () => {
+    const textVariant = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    };
+
+    const containerVariant = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.15 }
+        }
+    };
+
+    const cardVariant = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    };
+
     return (
-        <div id="portfolio" className="bg-gray-50 dark:bg-gray-900 py-16 items-center justify-center text-left">
+        <div id="portfolio" className="bg-slate-100 dark:bg-gray-900 py-16 items-center justify-center text-left overflow-hidden">
             <div className="max-w-screen-xl mx-auto px-6 md:px-12">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+                
+                <motion.div 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={textVariant}
+                    className="text-center mb-12"
+                >
+                    <h2 className="text-3xl font-extrabold text-slate-800 dark:text-white sm:text-4xl">
                         Featured <span className="text-blue-600 dark:text-blue-400">Projects</span>
                     </h2>
-                    <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
+                    <p className="mt-4 text-lg text-slate-500 dark:text-gray-400">
                         A collection of professional and academic projects I&apos;ve contributed to.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <motion.div 
+                    variants={containerVariant}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
                     {projects.map((project, index) => (
-                        <div key={index} className="flex flex-col justify-between p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 dark:bg-gray-800 dark:border-gray-700">
+                        <motion.div 
+                            key={index} 
+                            variants={cardVariant}
+                            className="flex flex-col justify-between p-6 bg-white/70 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 dark:bg-gray-800 dark:border-gray-700"
+                        >
                             <div>
                                 <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                                     {project.role}
                                 </span>
-                                <h3 className="mt-2 text-xl font-bold text-gray-900 dark:text-white">
+                                <h3 className="mt-2 text-xl font-bold text-slate-800 dark:text-white">
                                     {project.title}
                                 </h3>
-                                <p className="mt-3 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                <p className="mt-3 text-slate-500 dark:text-gray-400 text-sm leading-relaxed">
                                     {project.description}
                                 </p>
                             </div>
                             <div className="mt-6 flex flex-wrap gap-2">
                                 {project.tech.map((tech, i) => (
-                                    <span key={i} className="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                                    <span key={i} className="px-3 py-1 text-xs font-medium text-slate-500 bg-slate-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
                                         {tech}
                                     </span>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
+
             </div>
         </div>
     );

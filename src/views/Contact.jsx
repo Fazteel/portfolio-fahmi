@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -45,23 +46,48 @@ const Contact = () => {
         }
     };
 
+    const slideLeft = {
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    };
+
+    const slideRight = {
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    };
+
     return (
-        <div id="contact" className="bg-white dark:bg-gray-800 py-16">
+        <div id="contact" className="bg-white/70 dark:bg-gray-800 py-16 overflow-hidden">
             <div className="max-w-screen-xl mx-auto px-6 md:px-12">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+                
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-12"
+                >
+                    <h2 className="text-3xl font-extrabold text-slate-800 dark:text-white sm:text-4xl">
                         Get in <span className="text-blue-600 dark:text-blue-400">Touch</span>
                     </h2>
-                    <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
+                    <p className="mt-4 text-lg text-slate-500 dark:text-gray-400">
                         Have a project in mind or want to discuss opportunities? Feel free to reach out.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <div className="flex flex-col space-y-8 bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    
+                    {/* BAGIAN INFO - SLIDE DARI KIRI */}
+                    <motion.div 
+                        variants={slideLeft}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                        className="flex flex-col space-y-8 bg-slate-100 dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700"
+                    >
                         <div>
-                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Contact Information</h3>
-                            <p className="text-gray-600 dark:text-gray-400 mb-8">
+                            <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">Contact Information</h3>
+                            <p className="text-slate-500 dark:text-gray-400 mb-8">
                                 I am currently open to new opportunities. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
                             </p>
                         </div>
@@ -86,27 +112,35 @@ const Contact = () => {
                                 <span className="text-gray-700 dark:text-gray-300 font-medium">Karawang, Jawa Barat</span>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* BAGIAN FORM - SLIDE DARI KANAN */}
+                    <motion.form 
+                        onSubmit={handleSubmit} 
+                        variants={slideRight}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                        className="space-y-6"
+                    >
                         <div>
                             <label htmlFor="name" className="block text-start text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
                             <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required
-                                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200"
+                                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-slate-100 dark:bg-gray-700 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200"
                                 placeholder="John Doe"
                             />
                         </div>
                         <div>
                             <label htmlFor="email" className="block text-start text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Email</label>
                             <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required
-                                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200"
+                                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-slate-100 dark:bg-gray-700 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200"
                                 placeholder="john@example.com"
                             />
                         </div>
                         <div>
                             <label htmlFor="message" className="block text-start text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
                             <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows="5"
-                                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200 resize-none"
+                                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-slate-100 dark:bg-gray-700 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200 resize-none"
                                 placeholder="How can I help you?"
                             ></textarea>
                         </div>
@@ -125,7 +159,7 @@ const Contact = () => {
                         {status === 'error' && (
                             <p className="text-red-600 dark:text-red-400 text-center font-medium mt-4">Oops! Something went wrong. Please try again later.</p>
                         )}
-                    </form>
+                    </motion.form>
                 </div>
             </div>
         </div>
