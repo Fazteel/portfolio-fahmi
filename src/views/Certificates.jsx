@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import WGSCert from '../assets/certificate/Fahmi Andika Setiono.pdf';
+import BNSPCert from '../assets/certificate/bnsp.jpg';
 
 const certificates = [
     {
@@ -7,45 +9,54 @@ const certificates = [
         title: "Node.js & React.js Bootcamp Graduate",
         issuer: "WGS Hub",
         date: "November 2024",
-        credentialId: "WGS-NRB-2024-0987",
-        link: "https://wgshub.com",
+        credentialId: "2202001/11/WGSID - BC/04/2024",
+        link: WGSCert,
         description: "Intensive training program covering modern web architectures, REST APIs, Role-Based Access Control (RBAC), and performance tuning with Node.js and React."
     },
     {
         id: 2,
-        title: "Full-Stack Web Development Specialist",
-        issuer: "SEAMEO QITEP",
-        date: "September 2024",
-        credentialId: "SEAMEO-WD-2024-5412",
-        link: "https://www.qitepinscience.org",
-        description: "Practical development of database-driven applications using Laravel, React, and SQL database optimization techniques."
-    },
-    {
-        id: 3,
-        title: "Belajar Dasar Pemrograman JavaScript",
-        issuer: "Dicoding Indonesia",
-        date: "December 2023",
-        credentialId: "JS-BASIC-DEC2023",
-        link: "https://www.dicoding.com/certificates/1OP86N8M3X1N",
-        description: "Foundational Javascript certificate verifying understanding of variable scopes, functional programming, OOP, and asynchronous javascript control flows."
-    },
-    {
-        id: 4,
-        title: "Belajar Membuat Aplikasi Web dengan React",
-        issuer: "Dicoding Indonesia",
-        date: "March 2024",
-        credentialId: "REACT-APP-MAR2024",
-        link: "https://www.dicoding.com/certificates/EYX4Y1G3PZ1M",
-        description: "React application development covering declarative rendering, component lifecycle states, custom hooks, and state context propagation."
-    },
-    {
-        id: 5,
         title: "Belajar Dasar Pemrograman Web",
         issuer: "Dicoding Indonesia",
         date: "October 2023",
-        credentialId: "WEB-BASIC-OCT2023",
-        link: "https://www.dicoding.com/certificates/2VX3N4D0PXY1",
+        credentialId: "0LZ0Q48JKZ65",
+        link: "https://www.dicoding.com/certificates/0LZ0Q48JKZ65",
         description: "Fundamentals of responsive layout design using semantic HTML5 tags, CSS layouts (Flexbox/Grid), and media-query responsive viewports."
+    },
+    {
+        id: 3,
+        title: "AWS Academy Graduate - AWS Academy Cloud Foundations",
+        issuer: "Amazon Web Services (AWS)",
+        date: "June 2025",
+        credentialId: "46fb657a-effd-4459-908b-195c8fd00e8c",
+        link: "https://www.credly.com/badges/46fb657a-effd-4459-908b-195c8fd00e8c/linked_in_profile",
+        description: "Comprehensive understanding of cloud computing concepts, AWS core services, security, architecture, pricing, and support models."
+    },
+    {
+        id: 4,
+        title: "AWS Academy Graduate - Cloud Foundations - Training Badge",
+        issuer: "Amazon Web Services (AWS)",
+        date: "June 2026",
+        credentialId: "bebadd47-8d2d-4bca-a524-5bdedc38a5dd",
+        link: "https://www.credly.com/badges/bebadd47-8d2d-4bca-a524-5bdedc38a5dd/linked_in_profile",
+        description: "Hands-on cloud foundations credential demonstrating proficiency in AWS cloud services, architectural design, security controls, and resource billing."
+    },
+    {
+        id: 5,
+        title: "AWS Academy Graduate - Cloud Developing - Training Badge",
+        issuer: "Amazon Web Services (AWS)",
+        date: "June 2026",
+        credentialId: "a6e3b241-7937-46da-a922-c5f604c77b7b",
+        link: "https://www.credly.com/badges/a6e3b241-7937-46da-a922-c5f604c77b7b/linked_in_profile",
+        description: "Proficiency credential for developing cloud applications on AWS, using AWS SDKs, managing APIs, handling session states, and deploying code."
+    },
+    {
+        id: 6,
+        title: "Sertifikat Kompetensi - Pengembang Web (Web Developer)",
+        issuer: "BNSP (Badan Nasional Sertifikasi Profesi)",
+        date: "November 2024",
+        credentialId: "No.Reg.TIK.186.00329.2024",
+        link: BNSPCert,
+        description: "National professional certification (BNSP) validating competence as a Web Developer under the Professional Certification Institution of PENS."
     }
 ];
 
@@ -78,8 +89,8 @@ const Certificates = () => {
     return (
         <div id="certificates" className="bg-transparent py-16 items-center justify-center text-left overflow-hidden">
             <div className="max-w-screen-xl mx-auto px-6 md:px-12">
-                
-                <motion.div 
+
+                <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
@@ -95,14 +106,14 @@ const Certificates = () => {
                 </motion.div>
 
                 {/* Carousel Wrapper */}
-                <div 
+                <div
                     className="relative max-w-4xl mx-auto"
                     onMouseEnter={() => setIsAutoplay(false)}
                     onMouseLeave={() => setIsAutoplay(true)}
                 >
                     {/* Navigation Buttons */}
                     <div className="absolute top-1/2 -left-4 md:-left-12 transform -translate-y-1/2 z-10">
-                        <button 
+                        <button
                             onClick={prevSlide}
                             className="p-3 rounded-xl bg-white/80 hover:bg-white border border-slate-200/50 shadow-md hover:shadow-lg dark:bg-slate-900/80 dark:hover:bg-slate-800 dark:border-slate-800/80 text-slate-700 dark:text-slate-300 transition-all duration-200 focus:outline-none"
                             aria-label="Previous slide"
@@ -112,9 +123,9 @@ const Certificates = () => {
                             </svg>
                         </button>
                     </div>
-                    
+
                     <div className="absolute top-1/2 -right-4 md:-right-12 transform -translate-y-1/2 z-10">
-                        <button 
+                        <button
                             onClick={nextSlide}
                             className="p-3 rounded-xl bg-white/80 hover:bg-white border border-slate-200/50 shadow-md hover:shadow-lg dark:bg-slate-900/80 dark:hover:bg-slate-800 dark:border-slate-800/80 text-slate-700 dark:text-slate-300 transition-all duration-200 focus:outline-none"
                             aria-label="Next slide"
@@ -127,7 +138,7 @@ const Certificates = () => {
 
                     {/* Slides */}
                     <div className="overflow-hidden py-4 px-2">
-                        <motion.div 
+                        <motion.div
                             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                             layout
                         >
@@ -145,10 +156,12 @@ const Certificates = () => {
                                             onMouseEnter={() => setHoveredCardId(cert.id)}
                                             onMouseLeave={() => setHoveredCardId(null)}
                                             className={`p-6 rounded-2xl border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between h-[360px] glass-card
-                                              ${hoveredCardId === cert.id 
-                                                ? 'border-blue-400/50 dark:border-blue-500/30 ring-1 ring-blue-500/30' 
-                                                : 'border-slate-200/50 dark:border-slate-800/40'
-                                              }`}
+                                              ${offset === 1 ? 'hidden md:flex' : ''}
+                                              ${offset === 2 ? 'hidden lg:flex' : ''}
+                                              ${hoveredCardId === cert.id
+                                                    ? 'border-blue-400/50 dark:border-blue-500/30 ring-1 ring-blue-500/30'
+                                                    : 'border-slate-200/50 dark:border-slate-800/40'
+                                                }`}
                                         >
                                             <div>
                                                 {/* Certificate SVG Badge */}
@@ -162,7 +175,7 @@ const Certificates = () => {
                                                 <h3 className="text-lg font-bold text-slate-800 dark:text-white line-clamp-2 group-hover:text-blue-600 transition-colors">
                                                     {cert.title}
                                                 </h3>
-                                                
+
                                                 <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-1">
                                                     {cert.issuer}
                                                 </p>
@@ -204,11 +217,10 @@ const Certificates = () => {
                             <button
                                 key={i}
                                 onClick={() => setCurrentIndex(i)}
-                                className={`h-2.5 rounded-full transition-all duration-300 ${
-                                    currentIndex === i 
-                                        ? 'w-8 bg-blue-600' 
-                                        : 'w-2.5 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400'
-                                }`}
+                                className={`h-2.5 rounded-full transition-all duration-300 ${currentIndex === i
+                                    ? 'w-8 bg-blue-600'
+                                    : 'w-2.5 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400'
+                                    }`}
                                 aria-label={`Go to slide ${i + 1}`}
                             />
                         ))}

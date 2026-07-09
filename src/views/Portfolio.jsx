@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { createPortal } from 'react-dom';
 
 const projects = [
     {
@@ -71,6 +72,20 @@ const projects = [
         github: "https://github.com/Fazteel/WasteGo",
         demo: null,
         color: "from-green-500 to-emerald-600"
+    },
+    {
+        id: 6,
+        title: "Kalaesok",
+        role: "Backend Developer",
+        category: "Backend",
+        description: "RESTful API untuk asisten kesehatan mental dan sistem SOS dengan chatbot, broadcast alert WhatsApp, dan penyimpanan S3.",
+        tech: ["Fastify", "Prisma", "PostgreSQL", "Redis", "MinIO"],
+        duration: "May 2026 - Jun 2026",
+        problem: "Pengguna kesulitan melacak mood, menulis jurnal, dan memicu bantuan darurat (SOS) instan saat krisis kesehatan mental.",
+        solution: "Mengembangkan API Fastify dengan chatbot krisis, integrasi API WhatsApp untuk SOS instan, log harian, dan penyimpanan MinIO S3.",
+        github: "https://github.com/Fazteel/kalaras-api",
+        demo: null,
+        color: "from-purple-500 to-indigo-600"
     }
 ];
 
@@ -230,9 +245,10 @@ const Portfolio = () => {
                 </motion.div>
 
                 {/* Project Details Modal */}
-                <AnimatePresence>
-                    {selectedProject && (
-                        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+                {typeof window !== 'undefined' && createPortal(
+                    <AnimatePresence>
+                        {selectedProject && (
+                            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
                             <motion.div 
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -359,7 +375,9 @@ const Portfolio = () => {
                             </motion.div>
                         </div>
                     )}
-                </AnimatePresence>
+                    </AnimatePresence>,
+                    document.body
+                )}
             </div>
         </div>
     );
