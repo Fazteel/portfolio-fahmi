@@ -43,7 +43,7 @@ const About = () => {
     };
 
     return (
-        <div id="about" className="bg-slate-50 dark:bg-slate-900 py-16 items-center justify-center text-center overflow-hidden">
+        <div id="about" className="bg-transparent py-16 items-center justify-center text-center overflow-hidden">
             <div className="max-w-screen-xl mx-auto px-6 md:px-12 mt-10">
                 
                 <motion.div 
@@ -101,7 +101,7 @@ const About = () => {
                     className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-5xl mx-auto"
                 >
                     {skillCategories.map((category, index) => (
-                        <motion.div key={index} variants={cardVariant} className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <motion.div key={index} variants={cardVariant} className="p-6 rounded-2xl shadow-sm border border-slate-200/50 dark:border-slate-800/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 glass-card">
                             <div className="flex items-center gap-3 mb-4">
                                 <span className="text-2xl">{category.icon}</span>
                                 <h3 className="text-xl font-bold text-slate-800 dark:text-white">

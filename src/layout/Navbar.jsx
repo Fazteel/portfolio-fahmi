@@ -22,13 +22,14 @@ const Navbar = () => {
         { name: 'About', to: 'about' },
         { name: 'Experience', to: 'experience' },
         { name: 'Portfolio', to: 'portfolio' },
+        { name: 'Certificates', to: 'certificates' },
         { name: 'Contact', to: 'contact' }
     ];
 
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${
             scrolled 
-                ? 'bg-white/70/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm py-3' 
+                ? 'bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border-b border-slate-200/30 dark:border-slate-800/30 shadow-sm py-3' 
                 : 'bg-transparent py-5'
         }`}>
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 lg:px-12">
@@ -56,7 +57,7 @@ const Navbar = () => {
                 </div>
 
                 <div className={`${isOpen ? 'block' : 'hidden'} w-full md:block md:w-auto mt-4 md:mt-0`}>
-                    <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-2xl bg-white/70/90 dark:bg-gray-800/90 md:bg-transparent md:dark:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0">
+                    <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-slate-200/50 rounded-2xl bg-white/90 shadow-lg dark:bg-slate-900/95 dark:border-slate-800/50 backdrop-blur-md md:bg-transparent md:dark:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0 md:shadow-none">
                         {navItems.map((item) => (
                             <li key={item.name}>
                                 <Link 

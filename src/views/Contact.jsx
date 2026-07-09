@@ -57,7 +57,7 @@ const Contact = () => {
     };
 
     return (
-        <div id="contact" className="bg-white/70 dark:bg-gray-800 py-16 overflow-hidden">
+        <div id="contact" className="bg-transparent py-16 overflow-hidden">
             <div className="max-w-screen-xl mx-auto px-6 md:px-12">
                 
                 <motion.div 
@@ -83,7 +83,7 @@ const Contact = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}
-                        className="flex flex-col space-y-8 bg-slate-100 dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700"
+                        className="flex flex-col space-y-8 p-8 rounded-2xl shadow-sm border border-slate-200/50 dark:border-slate-800/40 glass-card"
                     >
                         <div>
                             <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">Contact Information</h3>
@@ -126,21 +126,21 @@ const Contact = () => {
                         <div>
                             <label htmlFor="name" className="block text-start text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
                             <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required
-                                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-slate-100 dark:bg-gray-700 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200"
+                                className="w-full px-4 py-3 rounded-lg border border-slate-300/60 dark:border-slate-700/60 bg-white/40 dark:bg-slate-900/40 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200 focus:bg-white dark:focus:bg-slate-900/80"
                                 placeholder="John Doe"
                             />
                         </div>
                         <div>
                             <label htmlFor="email" className="block text-start text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Email</label>
                             <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required
-                                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-slate-100 dark:bg-gray-700 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200"
+                                className="w-full px-4 py-3 rounded-lg border border-slate-300/60 dark:border-slate-700/60 bg-white/40 dark:bg-slate-900/40 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200 focus:bg-white dark:focus:bg-slate-900/80"
                                 placeholder="john@example.com"
                             />
                         </div>
                         <div>
                             <label htmlFor="message" className="block text-start text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
                             <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows="5"
-                                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-slate-100 dark:bg-gray-700 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200 resize-none"
+                                className="w-full px-4 py-3 rounded-lg border border-slate-300/60 dark:border-slate-700/60 bg-white/40 dark:bg-slate-900/40 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200 resize-none focus:bg-white dark:focus:bg-slate-900/80"
                                 placeholder="How can I help you?"
                             ></textarea>
                         </div>
